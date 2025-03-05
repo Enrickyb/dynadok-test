@@ -17,7 +17,7 @@ const ClientSchema = new Schema<IClient>(
     phone: { type: String, required: true },
   },
   {
-    timestamps: true, // Cria automaticamente os campos createdAt e updatedAt
+    timestamps: true,
   }
 );
 
