@@ -1,0 +1,17 @@
+node_modules/
+dist/
+coverage/
+*.log
+*.log.*
+
+#node 
+npm-debug.log
+yarn-error.log
+
+.env
+
+# IDE
+.vscode/
+.idea/
+*.iml
+
