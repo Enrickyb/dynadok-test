@@ -3,8 +3,7 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-const MONGO_URI =
-  process.env.MONGO_URI || "mongodb://localhost:27017/meu_projeto";
+const MONGO_URI = process.env.MONGO_URI || "mongodb://mongo:27017/meu_projeto";
 
 export const connectDB = async () => {
   try {
