@@ -6,11 +6,12 @@ dotenv.config();
 let redisClient: any;
 
 if (process.env.NODE_ENV === "test") {
+  // Em ambiente de teste, usamos funções mock do Jest para que possamos manipulá-las nos testes
   redisClient = {
-    on: () => {},
-    get: async () => null,
-    set: async () => {},
-    quit: async () => {},
+    on: jest.fn(),
+    get: jest.fn().mockResolvedValue(null),
+    set: jest.fn().mockResolvedValue("OK"),
+    quit: jest.fn().mockResolvedValue(undefined),
   };
 } else {
   const REDIS_HOST = process.env.REDIS_HOST || "redis";
