@@ -11,6 +11,10 @@ export const connectDB = async () => {
     console.log("Conectado ao MongoDB");
   } catch (error) {
     console.error("Erro ao conectar ao MongoDB:", error);
+    if (process.env.NODE_ENV === "test") {
+      // Em testes, lança o erro para que possamos lidar com ele sem interromper o processo
+      throw error;
+    }
     process.exit(1);
   }
 };

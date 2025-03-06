@@ -3,7 +3,6 @@ import { Queue } from "bullmq";
 let clientQueue: Queue;
 
 if (process.env.NODE_ENV === "test") {
-  // Stub: cria um objeto dummy para não tentar conexão real
   clientQueue = {
     add: async () => Promise.resolve(),
   } as unknown as Queue;
