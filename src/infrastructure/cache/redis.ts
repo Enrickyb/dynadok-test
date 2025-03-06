@@ -3,23 +3,32 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-const REDIS_HOST = process.env.REDIS_HOST || "redis";
-const REDIS_PORT = Number(process.env.REDIS_PORT) || 6379;
+let redisClient: any;
 
-export const redisClient = new Redis({
-  host: REDIS_HOST,
-  port: REDIS_PORT,
-});
+if (process.env.NODE_ENV === "test") {
+  redisClient = {
+    on: () => {},
+    get: async () => null,
+    set: async () => {},
+    quit: async () => {},
+  };
+} else {
+  const REDIS_HOST = process.env.REDIS_HOST || "redis";
+  const REDIS_PORT = Number(process.env.REDIS_PORT) || 6379;
 
-// Evento de conexão bem-sucedida
-redisClient.on("connect", () => {
-  console.log("⚡ Conectado ao Redis");
-});
+  redisClient = new Redis({
+    host: REDIS_HOST,
+    port: REDIS_PORT,
+  });
 
-// Evento de erro
-redisClient.on("error", (err) => {
-  console.error("❌ Erro no Redis:", err);
-});
+  redisClient.on("connect", () => {
+    console.log("⚡ Conectado ao Redis");
+  });
 
-// Exportando corretamente para evitar erro
+  redisClient.on("error", (err: any) => {
+    console.error("❌ Erro no Redis:", err);
+  });
+}
+
+export { redisClient };
 export default redisClient;

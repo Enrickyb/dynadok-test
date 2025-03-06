@@ -5,7 +5,14 @@ const worker = new Worker(
   "clientQueue",
   async (job) => {
     console.log(`🔄 Processando job: ${job.id} - Dados:`, job.data);
-    // Aqui poderíamos, por exemplo, enviar um e-mail de boas-vindas ao cliente.
+
+    // simula o envio de um log para um sistema de monitoramento
+    await redisClient.set(
+      `log:${job.id}`,
+      JSON.stringify({ data: job.data, status: "processing" }),
+      "EX",
+      60
+    );
   },
   {
     connection: {
@@ -16,9 +23,9 @@ const worker = new Worker(
 );
 
 worker.on("completed", (job) => {
-  console.log(`✅ Job ${job.id} processado com sucesso!`);
+  console.log(`Job ${job.id} processado com sucesso!`);
 });
 
 worker.on("failed", (job, err) => {
-  console.error(`❌ Job ${job?.id} falhou:`, err);
+  console.error(`Job ${job?.id} falhou:`, err);
 });
