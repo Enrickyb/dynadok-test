@@ -69,7 +69,7 @@ Esta API foi desenvolvida utilizando Node.js, TypeScript, Express, MongoDB, Redi
 
 
 ## CI/CD
-- A integração contínua está configurada utilizando GitHub Actions. Toda vez que houver push ou pull request na branch main, os testes serão executados automaticamente. Consulte o arquivo .github/workflows/ci.yml para mais detalhes.
+- A integração contínua está configurada utilizando GitHub Actions. Toda vez que houver push ou pull request na branch main, os testes serão executados automaticamente. Consulte o arquivo .github/workflows/ci.yml para detalhes da implementação.
 
 ## Mensageria
 - Ao criar um cliente, a aplicação envia uma mensagem para a fila clientQueue e o worker processa a tarefa assincronamente (ex: enviar e-mail ou registrar log).
