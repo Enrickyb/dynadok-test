@@ -2,6 +2,9 @@ import request from "supertest";
 import express from "express";
 import clientRoutes from "../../presentation/routes/clientRoutes";
 import { connectDB } from "../../infrastructure/database/mongo";
+import mongoose from "mongoose";
+
+jest.setTimeout(30000); // Garante tempo suficiente para os testes
 
 const app = express();
 app.use(express.json());
@@ -9,6 +12,10 @@ app.use("/api", clientRoutes);
 
 beforeAll(async () => {
   await connectDB();
+});
+
+afterAll(async () => {
+  await mongoose.disconnect();
 });
 
 describe("Client Routes", () => {

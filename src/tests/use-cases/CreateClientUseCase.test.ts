@@ -1,4 +1,4 @@
-import { CreateClientUseCase } from "../application/use-cases/CreateClientUseCase";
+import { CreateClientUseCase } from "../../application/use-cases/CreateClientUseCase";
 
 describe("CreateClientUseCase", () => {
   it("deve criar um cliente com sucesso", async () => {
