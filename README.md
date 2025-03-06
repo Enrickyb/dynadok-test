@@ -85,7 +85,7 @@ Esta API foi desenvolvida utilizando Node.js, TypeScript, Express, MongoDB, Redi
 2. **Redis Cache**
  - O cache foi utilizado na busca de um cliente por id.
 
-3. **Mensageria (**bullMQ**)
+3. **Mensageria (bullMQ)**
  - Implementei um worker para o consumo de mensagens.
  - Ao criar um usuário é enviado para a queue uma mensagem, a qual é consumida pelo worker, que por sua vez, simula o envio de um log para o redis (o qual poderia ser utilizado por um sistema de monitoramento posteriormente)
 
