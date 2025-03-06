@@ -18,7 +18,7 @@ Esta API foi desenvolvida utilizando Node.js, TypeScript, Express, MongoDB, Redi
 1. **Clonar o Repositório**
 
    ```sh
-   git clone [<URL_DO_REPOSITORIO>](https://github.com/Enrickyb/dynadok-test)
+   git clone https://github.com/Enrickyb/dynadok-test
    cd meu-projeto
    ```
 2. **Instalar as Dependências**
