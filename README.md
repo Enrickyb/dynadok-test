@@ -2,6 +2,10 @@
 
 Esta API foi desenvolvida utilizando Node.js, TypeScript, Express, MongoDB, Redis e BullMQ, seguindo os princípios da Clean Architecture e SOLID.
 
+
+![image](https://github.com/user-attachments/assets/a2d9adaf-7451-46a3-b2cb-716cc3e73e9c)
+
+
 ## Tecnologias Utilizadas
 
 - **Node.js** com **TypeScript**
