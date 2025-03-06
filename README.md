@@ -78,5 +78,15 @@ Esta API foi desenvolvida utilizando Node.js, TypeScript, Express, MongoDB, Redi
 ## Proximos passos:
 - Implementação de autenticação e JWT.
 
+## Observações
+1. **Teste**
+ - O ideal para rodar uma suite de testes seria criar uma ambientação de banco de dados e cache diferente do usado no desenvolvimento e produção. Entretando a fim de escrever testes em um curto periodo de tempo, fiz uma adaptação para testar a aplicação com stub.
+
+2. **Redis Cache**
+ - O cache foi utilizado na busca de um cliente por id.
+
+3. **Mensageria (**bullMQ**)
+ - Implementei um worker para o consumo de mensagens.
+ - Ao criar um usuário é enviado para a queue uma mensagem, a qual é consumida pelo worker, que por sua vez, simula o envio de um log para o redis (o qual poderia ser utilizado por um sistema de monitoramento posteriormente)
 
 
