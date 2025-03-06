@@ -19,7 +19,7 @@ Esta API foi desenvolvida utilizando Node.js, TypeScript, Express, MongoDB, Redi
 
    ```sh
    git clone https://github.com/Enrickyb/dynadok-test
-   cd meu-projeto
+   cd dynadok-test
    ```
 2. **Instalar as Dependências**
 
