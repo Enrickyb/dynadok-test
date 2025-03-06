@@ -79,9 +79,6 @@ Esta API foi desenvolvida utilizando Node.js, TypeScript, Express, MongoDB, Redi
 - Ao criar um cliente, a aplicação envia uma mensagem para a fila clientQueue e o worker processa a tarefa assincronamente.
 
 
-## Proximos passos:
-- Implementação de autenticação e JWT.
-
 ## Observações
 1. **Teste**
  - O ideal para rodar uma suite de testes seria criar uma ambientação de banco de dados e cache diferente do usado no desenvolvimento e produção. Entretando a fim de escrever testes em um curto periodo de tempo, fiz uma adaptação para testar a aplicação com stub.
